@@ -1,4 +1,4 @@
-export type ShapeType = "rect" | "circle" | "image";
+export type ShapeType = "rect" | "circle" | "image" | "brush" | "fill";
 
 export interface RectShape {
   id: number;
@@ -29,4 +29,22 @@ export interface ImageShape {
   image: HTMLImageElement;
 }
 
-export type Shape = RectShape | CircleShape | ImageShape;
+export interface BrushStroke {
+  id: number;
+  type: "brush";
+  points: { x: number; y: number }[];
+  color: string;
+}
+
+export interface FillShape {
+  id: number;
+  type: "fill";
+  color: string;
+}
+
+export type Shape =
+  | RectShape
+  | CircleShape
+  | ImageShape
+  | BrushStroke
+  | FillShape;

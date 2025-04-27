@@ -40,6 +40,25 @@ class ShapeStore {
       return;
     }
 
+    if (this.selectedShapeType === "fill") {
+      this.shapes.push({
+        id,
+        type: "fill",
+        color: this.selectedColor,
+      });
+      return;
+    }
+
+    if (this.selectedShapeType === "brush") {
+      this.shapes.push({
+        id,
+        type: "brush",
+        points: [{ x, y }],
+        color: this.selectedColor,
+      });
+      return;
+    }
+
     const shape: Shape =
       this.selectedShapeType === "rect"
         ? {
