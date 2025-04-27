@@ -110,16 +110,27 @@ const ShapeEditorCanvas: React.FC = observer(() => {
   };
 
   return (
-    <canvas
-      ref={canvasRef}
-      width={800}
-      height={600}
-      style={{ border: "1px solid black", cursor: "crosshair" }}
-      onClick={handleClick}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-    />
+    <div
+      style={{
+        width: "800px",
+        height: "600px",
+        border: "1px solid #ccc",
+        backgroundColor: "#fff",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <canvas
+        ref={canvasRef}
+        width={800}
+        height={600}
+        style={{ border: "1px solid black", cursor: "crosshair" }}
+        onClick={handleClick}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+      />
+    </div>
   );
 });
 
