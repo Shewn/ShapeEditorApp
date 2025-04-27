@@ -13,7 +13,7 @@ const ShapeControls: React.FC = observer(() => {
       }}
     >
       <button
-        onClick={shapeStore.clearShapes}
+        onClick={() => shapeStore.clearShapes()}
         style={{
           padding: "8px 16px",
           backgroundColor: "#ff4d4f",
@@ -29,7 +29,7 @@ const ShapeControls: React.FC = observer(() => {
       </button>
 
       <button
-        onClick={shapeStore.undo}
+        onClick={() => shapeStore.undo()}
         style={{
           padding: "8px 16px",
           backgroundColor: "#1890ff",
