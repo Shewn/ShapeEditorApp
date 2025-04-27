@@ -1,28 +1,14 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 import { shapeStore } from "../stores/store";
-import {
-  FaPaintbrush,
-  FaFillDrip,
-  FaRegSquare,
-  FaRegCircle,
-  FaImage,
-} from "react-icons/fa6";
 import { ShapeType } from "../interfaces/shapes";
-
-const BrushIcon = FaPaintbrush as unknown as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
-const FillIcon = FaFillDrip as unknown as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
-const RectIcon = FaRegSquare as unknown as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
-const CircleIcon = FaRegCircle as unknown as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
-const ImageIcon = FaImage as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+import {
+  BrushIcon,
+  CircleIcon,
+  FillIcon,
+  ImageIcon,
+  RectIcon,
+} from "../interfaces/toolIcons";
 
 const tools = [
   { type: "brush" as ShapeType, icon: BrushIcon, label: "Brush" },

@@ -42,7 +42,7 @@ const ShapeLayerPanel: React.FC = observer(() => {
               }}
               title="Delete layer"
             >
-              ❌
+              X
             </button>
           </div>
         ))
