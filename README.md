@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# Shape Editing App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **Shape Editing App**! This is a simple canvas-based application where users can draw shapes, upload images, and interact with a variety of tools. The app uses React, TypeScript, and MobX for state management.
 
-## Available Scripts
+## Features:
 
-In the project directory, you can run:
+- Draw shapes (rectangle, circle, and freeform brush).
+- Fill the canvas with a color.
+- Upload and place images on the canvas.
+- Undo and clear canvas actions.
+- Layers panel to manage shapes.
+- Select or unselect tools, with "no action" when no tool is selected.
 
-### `npm start`
+## Prerequisites:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Node.js** (LTS version recommended)
+- **npm** (Node Package Manager)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Steps to Run the App:
 
-### `npm test`
+### 1. Install Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run the following command to install all the necessary dependencies:
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Start the Development Server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once dependencies are installed, you can start the development server by running:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+This will start the app on your local development server, usually at http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 3. Open the App in Your Browser
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once the development server is running, open your browser and navigate to:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+http://localhost:3000
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You should now see the app running, ready for you to start drawing and editing on the canvas!
 
-## Learn More
+## Technologies Used:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. React: UI library
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. TypeScript: Static typing
+
+3. MobX: State management
+
+4. Canvas: For drawing and interactions
+
+5. React Icons: For adding icons in the toolbar
