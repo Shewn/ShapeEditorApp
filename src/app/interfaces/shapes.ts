@@ -1,4 +1,4 @@
-export type ShapeType = "rect" | "circle" | "image" | "brush" | "fill";
+export type ShapeType = "rect" | "circle" | "image" | "brush" | "fill" | null;
 
 export interface RectShape {
   id: number;

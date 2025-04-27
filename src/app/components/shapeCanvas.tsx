@@ -20,13 +20,6 @@ const ShapeEditorCanvas: React.FC = observer(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     shapeStore.shapes.forEach((shape) => {
-      if (shape.type === "fill") {
-        ctx.fillStyle = shape.color;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
-    });
-
-    shapeStore.shapes.forEach((shape) => {
       ctx.beginPath();
       if (shape.type === "rect") {
         ctx.fillStyle = shape.color;
@@ -61,6 +54,9 @@ const ShapeEditorCanvas: React.FC = observer(() => {
           }
           ctx.stroke();
         }
+      } else if (shape.type === "fill") {
+        ctx.fillStyle = shape.color;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
       }
       ctx.closePath();
     });
@@ -77,6 +73,7 @@ const ShapeEditorCanvas: React.FC = observer(() => {
   };
 
   const handleClick = (e: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
+    if (!shapeStore.selectedShapeType) return;
     if (shapeStore.selectedShapeType !== "brush") {
       const { x, y } = getMousePos(e);
       shapeStore.addShapeAt(x, y);
@@ -124,7 +121,10 @@ const ShapeEditorCanvas: React.FC = observer(() => {
         ref={canvasRef}
         width={800}
         height={600}
-        style={{ border: "1px solid black", cursor: "crosshair" }}
+        style={{
+          border: "1px solid black",
+          cursor: shapeStore.selectedShapeType ? "crosshair" : "default",
+        }}
         onClick={handleClick}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}

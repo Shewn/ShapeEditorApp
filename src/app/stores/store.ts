@@ -4,7 +4,7 @@ import { Shape, ShapeType } from "../interfaces/shapes";
 class ShapeStore {
   shapes: Shape[] = [];
   nextId = 1;
-  selectedShapeType: ShapeType = "rect";
+  selectedShapeType: ShapeType = null;
   selectedColor: string = "#ff0000";
   uploadedImage: HTMLImageElement | null = null;
 
@@ -13,6 +13,11 @@ class ShapeStore {
   }
 
   setShapeType(type: ShapeType) {
+    if (this.selectedShapeType === type) {
+      this.selectedShapeType = null;
+      this.uploadedImage = null;
+      return;
+    }
     this.selectedShapeType = type;
   }
 
@@ -27,7 +32,8 @@ class ShapeStore {
   addShapeAt(x: number, y: number) {
     const id = this.nextId++;
 
-    if (this.selectedShapeType === "image" && this.uploadedImage) {
+    if (this.selectedShapeType === "image") {
+      if (!this.uploadedImage) return;
       this.shapes.push({
         id,
         type: "image",
