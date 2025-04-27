@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { Shape, ShapeType } from "../types/shapeType";
+import { Shape, ShapeType } from "../interfaces/shapes";
 
 class ShapeStore {
   shapes: Shape[] = [];
